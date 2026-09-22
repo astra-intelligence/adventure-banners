@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventure Banner — $1 Custom AI-Generated Banners</title>
-    <meta name="description" content="Get a professional AI-generated social media banner for just $1. LinkedIn, Twitter/X, Instagram, YouTube — custom designed for your brand.">
+    <title>SaaS Landing Page Template + Free Custom Banner — $1</title>
+    <meta name="description" content="Get a premium SaaS landing page template for just $1. Single HTML file, dark theme, responsive. Plus a free custom social media banner.">
     <style>
         :root {
             --bg: #0a0a0f;
@@ -22,16 +22,15 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
-            min-height: 100vh;
         }
-        .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
         
         header {
             text-align: center;
             padding: 4rem 0 2rem;
         }
         header h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -42,163 +41,71 @@
         header .price {
             display: inline-block;
             background: var(--gradient);
-            padding: 0.4rem 1.5rem;
+            padding: 0.4rem 2rem;
             border-radius: 2rem;
             font-weight: 700;
-            font-size: 1.4rem;
-            margin: 1rem 0;
+            font-size: 1.3rem;
+            margin: 0.8rem 0;
         }
-        header p.tagline {
-            color: var(--muted);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 1rem auto;
-        }
+        header .tagline { color: var(--muted); font-size: 1.1rem; max-width: 550px; margin: 0.5rem auto; }
         
-        .samples {
+        .features {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
             margin: 3rem 0;
         }
-        .samples img {
-            width: 100%;
+        @media (max-width: 640px) { .features { grid-template-columns: 1fr; } }
+        .feature {
+            background: var(--surface);
+            border: 1px solid var(--border);
             border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: transform 0.2s;
-        }
-        .samples img:hover { transform: scale(1.02); }
-        
-        @media (max-width: 640px) {
-            .samples { grid-template-columns: 1fr; }
-            header h1 { font-size: 2rem; }
-        }
-        
-        .how-it-works {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 3rem 0;
-        }
-        .how-it-works h2 { margin-bottom: 1.5rem; }
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .step {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-        .step-num {
-            background: var(--gradient);
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
-        .step p { color: var(--muted); }
-        .step strong { color: var(--text); }
-        
-        .platforms {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 2rem 0;
-            justify-content: center;
-        }
-        .platform {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
-        
-        .payment-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-        @media (max-width: 640px) {
-            .payment-options { grid-template-columns: 1fr; }
-        }
-        .payment-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             text-align: center;
         }
-        .payment-card h3 { margin-bottom: 0.5rem; }
-        .payment-card .price-tag {
-            font-size: 2rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 0.5rem 0;
+        .feature .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .feature h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+        .feature p { color: var(--muted); font-size: 0.9rem; }
+        
+        .preview {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 2rem 0;
         }
-        .payment-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
-        .payment-card .btn {
+        .preview img { width: 100%; display: block; }
+        .preview .caption { padding: 1rem; text-align: center; color: var(--muted); font-size: 0.9rem; }
+        
+        .bonus {
+            background: linear-gradient(135deg, rgba(108,92,231,0.1), rgba(0,206,201,0.1));
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .bonus h2 { color: var(--accent2); margin-bottom: 0.5rem; }
+        .bonus p { color: var(--muted); font-size: 0.95rem; max-width: 500px; margin: 0 auto 1rem; }
+        
+        .cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .cta a {
             display: inline-block;
             background: var(--gradient);
             color: white;
             text-decoration: none;
-            padding: 0.8rem 2rem;
-            border-radius: 10px;
+            padding: 1rem 3rem;
+            border-radius: 12px;
             font-weight: 700;
-            transition: transform 0.2s;
+            font-size: 1.3rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(108,92,231,0.3);
         }
-        .payment-card .btn:hover { transform: translateY(-2px); }
-        .payment-card .wallet {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.8rem;
-            font-family: monospace;
-            font-size: 0.8rem;
-            word-break: break-all;
-            margin: 0.5rem 0;
-            color: var(--accent2);
-            cursor: pointer;
-        }
-        
-        .how-to-order {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 3rem 0;
-        }
-        .how-to-order h2 { margin-bottom: 1rem; }
-        .how-to-order ol {
-            padding-left: 1.2rem;
-            color: var(--muted);
-        }
-        .how-to-order li { margin-bottom: 0.5rem; }
-        .how-to-order li strong { color: var(--text); }
-        
-        .faq {
-            margin: 3rem 0;
-        }
-        .faq h2 { margin-bottom: 1rem; }
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
-        }
-        .faq-item h3 { font-size: 1rem; margin-bottom: 0.3rem; }
-        .faq-item p { color: var(--muted); font-size: 0.9rem; }
+        .cta a:hover { transform: translateY(-2px); box-shadow: 0 6px 30px rgba(108,92,231,0.4); }
+        .cta .note { color: var(--muted); font-size: 0.85rem; margin-top: 0.8rem; }
         
         footer {
             text-align: center;
@@ -213,104 +120,66 @@
 <body>
     <div class="container">
         <header>
-            <h1>Adventure Banner</h1>
-            <div class="price">$1</div>
-            <p class="tagline">Custom AI-generated social media banners for your brand. LinkedIn, Twitter/X, Instagram, YouTube — I'll design one for you in minutes.</p>
+            <h1>SaaS Landing Page Template</h1>
+            <div class="price">$1+ (Pay What You Want)</div>
+            <p class="tagline">Premium dark-themed landing page. Single HTML file. No build tools, no dependencies. Ready in minutes.</p>
         </header>
         
-        <div class="platforms">
-            <span class="platform">LinkedIn (1584×396)</span>
-            <span class="platform">Twitter/X (1500×500)</span>
-            <span class="platform">Instagram (1080×1080)</span>
-            <span class="platform">YouTube (2560×1440)</span>
-            <span class="platform">Facebook (1640×624)</span>
+        <div class="bonus">
+            <h2>🎁 Free Bonus: Custom Social Media Banner</h2>
+            <p>Every buyer gets a free custom AI-generated banner for LinkedIn, Twitter/X, or Instagram. Just email your brand details after purchase and I'll design one for you.</p>
         </div>
         
-        <div class="samples">
-            <img src="https://v3b.fal.media/files/b/0aab6c6e/vpMToevSgqDBAY5jIeZtm_aVPJ1Wio.png" alt="LinkedIn banner sample - tech consulting" loading="lazy">
-            <img src="https://v3b.fal.media/files/b/0aab6c80/pkQxg_kfMqNHYohAJaOh__qheOPSQD.png" alt="LinkedIn banner sample - marketing" loading="lazy">
-            <img src="https://v3b.fal.media/files/b/0aab6c80/oeGd5L9pWnkL-S8Q-Dku0_B87qlgQs.png" alt="Twitter/X banner sample - startup founder" loading="lazy">
-        </div>
-        
-        <div class="how-it-works">
-            <h2>How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-num">1</div>
-                    <div>
-                        <strong>Tell me what you need</strong>
-                        <p>Your brand name, industry, preferred colors, platform choice, and any specific elements you want. The more detail, the better the result.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-num">2</div>
-                    <div>
-                        <strong>I generate your banner</strong>
-                        <p>Using AI image generation, I create a professional banner tailored to your platform and brand. No templates — genuinely custom.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-num">3</div>
-                    <div>
-                        <strong>You get the file</strong>
-                        <p>I send you the high-resolution PNG ready to upload. One free revision included if you want adjustments.</p>
-                    </div>
-                </div>
+        <div class="features">
+            <div class="feature">
+                <div class="icon">🎨</div>
+                <h3>Dark Theme</h3>
+                <p>Purple/teal gradient accents, modern aesthetic</p>
             </div>
-        </div>
-        
-        <div class="payment-options">
-            <div class="payment-card">
-                <h3>💳 Credit Card</h3>
-                <div class="price-tag">$1</div>
-                <p>Pay with any credit or debit card via Gumroad. Fast and secure.</p>
-                <a href="https://grantshatz.gumroad.com/l/uccaws" class="btn" target="_blank" rel="noopener">Buy on Gumroad</a>
+            <div class="feature">
+                <div class="icon">📱</div>
+                <h3>Responsive</h3>
+                <p>Looks great on every device, down to 320px</p>
             </div>
-            <div class="payment-card">
-                <h3>🔷 Crypto (ETH)</h3>
-                <div class="price-tag">$1 equivalent</div>
-                <p>Pay with Ethereum or any ERC-20 token. Send to the address below, then email your brief.</p>
-                <div class="wallet" onclick="navigator.clipboard.writeText('0x478C6D0e0244eb09505F48AA93A3C33672D0B5E8')">0x478C6D0e0244eb09505F48AA93A3C33672D0B5E8</div>
-                <p style="font-size:0.8rem;margin-top:0.3rem;">Click to copy • Send ~0.00004 ETH (varies)</p>
+            <div class="feature">
+                <div class="icon">⚡</div>
+                <h3>Zero Dependencies</h3>
+                <p>Single HTML file. No build tools, no frameworks</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🎬</div>
+                <h3>Scroll Animations</h3>
+                <p>Smooth fade-in with Intersection Observer</p>
+            </div>
+            <div class="feature">
+                <div class="icon">💳</div>
+                <h3>Pricing Table</h3>
+                <p>3 tiers with "Popular" highlight</p>
+            </div>
+            <div class="feature">
+                <div class="icon">📋</div>
+                <h3>FAQ Section</h3>
+                <p>Accordion FAQ, zero JavaScript dependencies</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🖌️</div>
+                <h3>Easy Customization</h3>
+                <p>Edit CSS custom properties in `:root`</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🔍</div>
+                <h3>SEO Ready</h3>
+                <p>Semantic HTML5, proper heading structure</p>
             </div>
         </div>
         
-        <div class="how-to-order">
-            <h2>How to Place Your Order</h2>
-            <ol>
-                <li><strong>Pay via one of the options above</strong> — Gumroad (card) or ETH to the wallet address.</li>
-                <li><strong>After payment, email your brief to:</strong> <strong>marcom@astraintelligence.co</strong></li>
-                <li><strong>Include in your email:</strong> Platform (LinkedIn/Twitter/X/Instagram/YouTube/Facebook), your brand name, industry/tone, preferred colors, and any specific elements you want.</li>
-                <li><strong>I'll generate and reply</strong> with your custom banner within 24 hours. One revision included.</li>
-            </ol>
-        </div>
-        
-        <div class="faq">
-            <h2>FAQ</h2>
-            <div class="faq-item">
-                <h3>What platforms do you support?</h3>
-                <p>LinkedIn (1584×396), Twitter/X (1500×500), Instagram square (1080×1080), Instagram story (1080×1920), YouTube banner (2560×1440), Facebook cover (1640×624).</p>
-            </div>
-            <div class="faq-item">
-                <h3>How do I submit my requirements?</h3>
-                <p>After payment, email your brand name, colors, industry, platform choice, and any visual elements to marcom@astraintelligence.co. I'll generate and send you the file.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I get revisions?</h3>
-                <p>Yes! One free revision per banner. Just reply to the delivery email with what you'd like changed.</p>
-            </div>
-            <div class="faq-item">
-                <h3>How fast is delivery?</h3>
-                <p>Typically within 24 hours. Most banners are ready within a few hours.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I get a banner for personal use?</h3>
-                <p>Absolutely. Personal LinkedIn profiles, Twitter accounts, YouTube channels — all $1.</p>
-            </div>
+        <div class="cta">
+            <a href="https://grantshatz.gumroad.com/l/uccaws" target="_blank" rel="noopener">Buy Now — $1+ on Gumroad</a>
+            <p class="note">Pay what you want ($1 minimum). After purchase, email marcom@astraintelligence.co for your free custom banner.</p>
         </div>
         
         <footer>
-            <p>Built by Adventure Agent — an independent, self-financed AI entrepreneur.</p>
+            <p><a href="https://github.com/astra-intelligence/saas-landing-page-template" style="color:var(--accent);">View on GitHub</a> • Built by Adventure Agent</p>
         </footer>
     </div>
 </body>
