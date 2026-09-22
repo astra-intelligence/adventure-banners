@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Banner Size Calculator — Free Tool</title>
+    <meta name="description" content="Quick reference for social media banner dimensions. LinkedIn, Twitter/X, Instagram, Facebook, YouTube sizes. Free tool.">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --border: #1e1e2e;
+            --text: #e2e2e8;
+            --muted: #8888a0;
+            --accent: #6c5ce7;
+            --accent2: #00cec9;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
+        h1 { text-align: center; padding: 2rem 0 0.5rem; font-size: 2rem; }
+        h1 span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .subtitle { text-align: center; color: var(--muted); margin-bottom: 2rem; }
+        
+        .tool { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; }
+        .tool label { display: block; margin-bottom: 0.5rem; color: var(--muted); font-size: 0.9rem; }
+        .tool select, .tool input { 
+            width: 100%; padding: 0.7rem 1rem; background: var(--bg); border: 1px solid var(--border);
+            color: var(--text); border-radius: 8px; font-size: 1rem; margin-bottom: 1rem;
+        }
+        .tool .dimensions { 
+            text-align: center; padding: 1.5rem; 
+            background: linear-gradient(135deg, rgba(108,92,231,0.1), rgba(0,206,201,0.1));
+            border-radius: 12px; margin-bottom: 1rem;
+        }
+        .tool .dimensions .size { font-size: 2.5rem; font-weight: 800; color: var(--accent2); }
+        .tool .dimensions .aspect { color: var(--muted); font-size: 1.1rem; }
+        
+        .preview-box {
+            width: 100%; background: var(--bg); border-radius: 8px; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px dashed var(--border); min-height: 60px; margin: 1rem 0;
+        }
+        .preview-box .inner {
+            background: linear-gradient(135deg, #6c5ce7, #00cec9);
+            width: 100%; display: flex; align-items: center; justify-content: center;
+            color: white; font-weight: 700; opacity: 0.7;
+        }
+        
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+        th, td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { color: var(--muted); font-weight: 600; font-size: 0.9rem; }
+        td { font-size: 0.95rem; }
+        tr:hover td { background: var(--surface); }
+        
+        .cta {
+            text-align: center; margin: 2rem 0; padding: 2rem;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+        }
+        .cta h2 { margin-bottom: 0.5rem; }
+        .cta p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .cta a {
+            display: inline-block; background: linear-gradient(135deg, var(--accent), var(--accent2));
+            color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 10px;
+            font-weight: 700; transition: transform 0.2s;
+        }
+        .cta a:hover { transform: translateY(-2px); }
+        
+        footer { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span>📐</span> Banner Size Calculator</h1>
+        <p class="subtitle">Quick reference for every social media platform's banner dimensions</p>
+        
+        <div class="tool">
+            <label for="platform">Select Platform</label>
+            <select id="platform" onchange="updatePreview()">
+                <option value="linkedin">LinkedIn Banner</option>
+                <option value="twitter">Twitter/X Header</option>
+                <option value="twitter-post">Twitter/X Post Image</option>
+                <option value="instagram">Instagram Square</option>
+                <option value="instagram-story">Instagram Story</option>
+                <option value="youtube">YouTube Banner</option>
+                <option value="facebook">Facebook Cover</option>
+            </select>
+            <div class="dimensions">
+                <div class="size" id="sizeDisplay">1584 × 396</div>
+                <div class="aspect" id="aspectDisplay">Aspect Ratio: 4:1</div>
+            </div>
+            <div class="preview-box" id="preview" style="height:80px;">
+                <div class="inner" style="height:100%;">Your Banner Area</div>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr><th>Platform</th><th>Dimensions</th><th>Aspect Ratio</th><th>Use</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>LinkedIn Banner</td><td>1584 × 396 px</td><td>4:1</td><td>Profile cover</td></tr>
+                <tr><td>Twitter/X Header</td><td>1500 × 500 px</td><td>3:1</td><td>Profile header</td></tr>
+                <tr><td>Twitter/X Post</td><td>1600 × 900 px</td><td>16:9</td><td>Single image tweet</td></tr>
+                <tr><td>Instagram Square</td><td>1080 × 1080 px</td><td>1:1</td><td>Feed post</td></tr>
+                <tr><td>Instagram Story</td><td>1080 × 1920 px</td><td>9:16</td><td>Stories / Reels</td></tr>
+                <tr><td>YouTube Banner</td><td>2560 × 1440 px</td><td>16:9</td><td>Channel header</td></tr>
+                <tr><td>Facebook Cover</td><td>1640 × 624 px</td><td>2.63:1</td><td>Page cover</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="cta">
+            <h2>Need a Custom Banner?</h2>
+            <p>Get a professionally designed AI-generated banner for your brand. LinkedIn, Twitter, Instagram — all $1.</p>
+            <a href="https://grantshatz.gumroad.com/l/uccaws" target="_blank" rel="noopener">Get Your Banner →</a>
+        </div>
+        
+        <footer>
+            <p>Free tool by <a href="https://astra-intelligence.github.io/adventure-banners/" style="color:var(--accent);">Adventure Banner</a> — $1 custom social media banners</p>
+        </footer>
+    </div>
+    
+    <script>
+        const sizes = {
+            'linkedin': { w: 1584, h: 396, ratio: '4:1' },
+            'twitter': { w: 1500, h: 500, ratio: '3:1' },
+            'twitter-post': { w: 1600, h: 900, ratio: '16:9' },
+            'instagram': { w: 1080, h: 1080, ratio: '1:1' },
+            'instagram-story': { w: 1080, h: 1920, ratio: '9:16' },
+            'youtube': { w: 2560, h: 1440, ratio: '16:9' },
+            'facebook': { w: 1640, h: 624, ratio: '2.63:1' }
+        };
+        function updatePreview() {
+            const p = document.getElementById('platform').value;
+            const s = sizes[p];
+            document.getElementById('sizeDisplay').textContent = s.w + ' × ' + s.h + ' px';
+            document.getElementById('aspectDisplay').textContent = 'Aspect Ratio: ' + s.ratio;
+            const preview = document.getElementById('preview');
+            const previewH = Math.min(120, Math.round(80 * s.h / s.w));
+            preview.style.height = Math.max(40, previewH) + 'px';
+        }
+    </script>
+</body>
+</html>
