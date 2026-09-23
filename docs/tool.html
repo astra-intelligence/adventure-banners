@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Banner Size Calculator — Free Tool</title>
-    <meta name="description" content="Quick reference for social media banner dimensions. LinkedIn, Twitter/X, Instagram, Facebook, YouTube sizes. Free tool.">
+    <title>Social Media Banner Size Calculator — Free Tool | Adventure Banner</title>
+    <meta name="description" content="Free social media banner size calculator. Instantly look up LinkedIn, Twitter/X, Instagram, Facebook, and YouTube banner dimensions. Preview your banner size in real-time.">
+    <meta name="keywords" content="banner size calculator, social media banner dimensions, LinkedIn banner size, Twitter header size, Instagram size, YouTube banner size, Facebook cover size">
+    <link rel="canonical" href="https://astra-intelligence.github.io/adventure-banners/tool.html">
+    <meta property="og:title" content="Social Media Banner Size Calculator — Free Tool">
+    <meta property="og:description" content="Instantly look up banner dimensions for every social media platform. Free tool with real-time preview.">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Social Media Banner Size Calculator",
+        "description": "Free tool to look up social media banner dimensions for LinkedIn, Twitter, Instagram, YouTube, and Facebook.",
+        "applicationCategory": "DesignTool",
+        "operatingSystem": "Any"
+    }
+    </script>
     <style>
         :root {
             --bg: #0a0a0f;
@@ -72,26 +87,27 @@
         .cta a:hover { transform: translateY(-2px); }
         
         footer { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+        footer a { color: var(--accent); }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1><span>📐</span> Banner Size Calculator</h1>
-        <p class="subtitle">Quick reference for every social media platform's banner dimensions</p>
+        <h1><span>📐</span> Social Media Banner Size Calculator</h1>
+        <p class="subtitle">Quick reference for every platform's banner and profile image dimensions</p>
         
         <div class="tool">
             <label for="platform">Select Platform</label>
             <select id="platform" onchange="updatePreview()">
-                <option value="linkedin">LinkedIn Banner</option>
-                <option value="twitter">Twitter/X Header</option>
-                <option value="twitter-post">Twitter/X Post Image</option>
-                <option value="instagram">Instagram Square</option>
-                <option value="instagram-story">Instagram Story</option>
-                <option value="youtube">YouTube Banner</option>
-                <option value="facebook">Facebook Cover</option>
+                <option value="linkedin">LinkedIn Banner — 1584 × 396 px</option>
+                <option value="twitter">Twitter/X Header — 1500 × 500 px</option>
+                <option value="twitter-post">Twitter/X Post Image — 1600 × 900 px</option>
+                <option value="instagram">Instagram Square Post — 1080 × 1080 px</option>
+                <option value="instagram-story">Instagram Story — 1080 × 1920 px</option>
+                <option value="youtube">YouTube Banner — 2560 × 1440 px</option>
+                <option value="facebook">Facebook Cover — 1640 × 624 px</option>
             </select>
             <div class="dimensions">
-                <div class="size" id="sizeDisplay">1584 × 396</div>
+                <div class="size" id="sizeDisplay">1584 × 396 px</div>
                 <div class="aspect" id="aspectDisplay">Aspect Ratio: 4:1</div>
             </div>
             <div class="preview-box" id="preview" style="height:80px;">
@@ -99,6 +115,7 @@
             </div>
         </div>
         
+        <h2 style="margin-bottom:1rem;">📋 Quick Reference Table</h2>
         <table>
             <thead>
                 <tr><th>Platform</th><th>Dimensions</th><th>Aspect Ratio</th><th>Use</th></tr>
@@ -116,12 +133,12 @@
         
         <div class="cta">
             <h2>Need a Custom Banner?</h2>
-            <p>Get a professionally designed AI-generated banner for your brand. LinkedIn, Twitter, Instagram — all $1.</p>
+            <p>Get a professionally designed AI-generated banner for your brand. LinkedIn, Twitter, Instagram — just $1.</p>
             <a href="https://grantshatz.gumroad.com/l/rgbzfz" target="_blank" rel="noopener">Get Your Custom Banner →</a>
         </div>
         
         <footer>
-            <p>Free tool by <a href="https://astra-intelligence.github.io/adventure-banners/" style="color:var(--accent);">Adventure Banner</a> — $1 custom social media banners</p>
+            <p>Free tool by <a href="https://astra-intelligence.github.io/adventure-banners/">Adventure Banner</a> — <a href="https://grantshatz.gumroad.com/l/rgbzfz">$1 custom social media banners</a></p>
         </footer>
     </div>
     
