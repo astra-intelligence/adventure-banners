@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Profile Banner Generator - Free Tool</title>
+<meta name="description" content="Free GitHub profile README banner generator. Create a banner in seconds.">
+<meta property="og:title" content="GitHub Profile Banner Generator">
+<meta property="og:description" content="Create a professional banner for your GitHub profile README.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://astra-intelligence.github.io/adventure-banners/generator.html">
+<style>
+:root { --bg: #0a0a0f; --surface: #12121a; --border: #1e1e2e; --text: #e2e2e8; --muted: #8888a0; --accent: #6c5ce7; --accent2: #00cec9; --gradient: linear-gradient(135deg, var(--accent), var(--accent2)); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { text-align: center; font-size: 2rem; }
+h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.subtitle { text-align: center; color: var(--muted); margin-bottom: 2rem; }
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media (max-width: 700px) { .layout { grid-template-columns: 1fr; } }
+.controls { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+.controls label { display: block; margin-bottom: 0.25rem; color: var(--muted); font-size: 0.85rem; }
+.controls input, .controls select { width: 100%; padding: 0.6rem 0.8rem; background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 8px; font-size: 0.95rem; margin-bottom: 1rem; }
+.controls input[type='color'] { height: 42px; padding: 2px; cursor: pointer; }
+.controls .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.preview-area { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; }
+.preview-area canvas { width: 100%; max-width: 800px; border-radius: 8px; border: 1px solid var(--border); }
+.btn-group { margin-top: 1rem; display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+.btn { display: inline-flex; align-items: center; background: var(--gradient); color: white; padding: 0.7rem 1.5rem; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; font-size: 0.95rem; text-decoration: none; }
+.btn:hover { transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.preset-btn { display: inline-flex; padding: 0.4rem 0.8rem; background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 6px; cursor: pointer; font-size: 0.8rem; margin: 0.25rem; }
+.preset-btn:hover { border-color: var(--accent); }
+.badge { display: inine-block; backgrund: var(--gradient); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.7rem; font-weight: 600; color: white; }
+.cta { text-align: center; margin: 2rem 0; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 16px; }
+.cta h3 { margin-bottom: 0.5rem; }
+.cta p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+.cta a { display: inline-block; background: var(--gradient); color: white; text-decoration: none; padding: 0.8rem 2rem; border-radius: 10px; font-weight: 700; }
+footer { text-align: center; color: var(--muted); font-size: 0.8rem; padding: 2rem 0; border-top: 1px solid var(--border); margin-top: 2rem; }
+footer a { color: var(--accent); }
+code { background: var(--border); padding: 0.1rem 0.3rem; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1><span>Profile</span> Banner Generator</h1>
+<p class="subtitle">Create a banner for your GitHub profile README - free, browser-based, no signup</p>
+<div class="layout">
+<div class="controls">
+<p><strong>Quick Styles</strong></p>
+<p>
+<button class="preset-btn" onclick="applyPreset('developer')">Developer</button>
+<button class="preset-btn" onclick="applyPreset('designer')">Designer</button>
+<button class="preset-btn" onclick="applyPreset('minimal')">Minimal</button>
+<button class="preset-btn" onclick="applyPreset('sunset')">Sunset</button>
+<button class="preset-btn" onclick="applyPreset('hacker')">Hacker</button>
+</p>
+<label for="name">Name / Handle</label>
+<input type="text" id="name" value="Your Name" oninput="renderBanner()">
+<label for="tagline">Tagline</label>
+<input type="text" id="tagline" value="Full-Stack Developer" oninput="renderBanner()">
+<div class="row">
+<div>
+<label for="bgColor">Background</label>
+<input type="color" id="bgColor" value="#6c5ce7" oninput="renderBanner()">
+</div>
+<div>
+<label for="accentColor">Accent</label>
+<input type="color" id="accentColor" value="#00cec9" oninput="renderBanner()">
+</div>
+</div>
+<label for="style">Style</label>
+<select id="style" onchange="renderBanner()">
+<option value="gradient">Gradient</option>
+<option value="solid">Solid</option>
+<option value="grid">Grid</option>
+<option value="dots">Dots</option>
+</select>
+<label for="github">GitHub Username</label>
+<input type="text" id="github" placeholder="e.g. yourname" oninput="renderBanner()">
+<button class="btn" onclick="downloadPNG()" style="margin-top:0.5rem">Download PNG</button>
+</div>
+<div class="preview-area">
+<p><strong>Live Preview</strong></p>
+<canvas id="bannerCanvas" width="800" height="280"></canvas>
+<div class="btn-group">
+<button class="btn" onclick="downloadPNG()">Download</button>
+<button class="btn btn-outline" onclick="copyHtml()">Copy MD</button>
+</div>
+<p style="font-size:0.8rem; color: var(--muted)">
+Tip: Add <code>![banner](URL)</code> to your READ ME</p>
+</div>
+</div>
+<div class="cta">
+<h3>Need More Control?</h3>
+<p>BannerGen CLI for command-line banner generation. LinkedIn, Twitter, Instagram, YouTube.</p>
+<a href="https://grantshatz.gumroad.com/l/oushyg">Get BannnerGen CLI &rarr;</a>
+<p style="font-size:0.8rem; color: var(--muted)">$1+ &middot; Pay what you want</p>
+</div>
+<footer>
+<p>Free tool by <a href="https://astra-intellience.github.io/adventure-banners/">Adventure Banner</a></p>
+</footer>
+</div>
+<script>
+const presets = {
+  developer: { name:'Alex Chen', tagline:'Full-Stack Developer', bgColor:'#6c5ce7', accentColor:'#00cec9', style:'gradient' },
+  designer: { name:'Sarah Kim', tagline:'UI/UX Designer', bgColor:'#e170b0', accentColor:'#fdcb6e', style:'gradient' },
+  minimal: { name:'John Doe', tagline:'Software Engineer', bgColor:'#1a1a2e', accentColor:'#e2e2e8', style:'solid' },
+  sunset: { name:'Maya Patel', tagline:'Creative Technologist', bgColor:'#f06448', accentColor:'#f9e057', style:'gradient' },
+  hacker: { name:'root@localhost', tagline:'Cybersecurity', bgColor:'#0d1117', accentColor:'#00ff80', style:'grid' }
+};
+
+function applyPreset(name) {
+  var p = presets[name]; if (!p) return;
+  document.getElementById('name').value = p.name;
+  document.getElementById('tagline').value = p.tagline;
+  document.getElementById('bgColor').value = p.bgColor;
+  document.getElementById('accentColor').value = p.accentColor;
+  document.getElementById('style').value = p.style;
+  renderBanner();
+}
+
+function renderBanner() {
+  var can = document.getElementById('bannerCanvas');
+  var ctx = can.getContext('2d');
+  var w = 800; var h = 280;
+  can.width = w; can.height = h;
+  var bg = document.getElementById('bgColor').value;
+  var ac = document.getElementById('accentColor').value;
+  var name = document.getElementById('name').value || 'Your Name';
+  var tag = document.getElementById('tagline').value || '';
+  var style = document.getElementById('style').value;
+  var gh = document.getElementById('github').value;
+
+  ctx.clearRect(0, 0, w, h);
+
+  if (style == 'gradient') {
+    var g = ctx.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, bg); g.addColorStop(1, ac);
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  } else if (style == 'solid') {
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, w, h);
+  } else if (style == 'grid') {
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = ac + '40'; ctx.lineWidth = 1;
+    for (var x = 0; x < w; x += 40) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+    for (var y = 0; y < h; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+  } else if (style == 'dots') {
+    ctx.fillStyle = bg; ctx.fillRect(0, 0, w, h);
+    ctx.fillStyle = ac + '40';
+    for (var x = 30; x < w; x += 45) { for (var y = 30; y < h; y += 45) { ctx.beginPath(); ctx.arc(x, y, 2.5, 0, Math.PI*2); ctx.fill(); } }
+  }
+
+  // Decorative circles
+  ctx.fillStyle = 'rgba(255,255,255,0.03)';
+  ctx.beginPath(); ctx.arc(w-60, h+60, 200, 0, Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(-40, -40, 140, 0, Math.PI*2); ctx.fill();
+
+  // Name
+  ctx.shadowColor = 'rgba(0,0,0,0.3)'; ctx.shadowBlur = 10;
+  ctx.fillStyle = '#fff'; ctx.font = 'bold 48px -apple-system, sans-serif';
+  ctx.textBaseline = 'bottom'; ctx.fillText(name, 50, 55);
+  ctx.shadowBlur = 0;
+
+  // Tagline
+  if (tag) { ctx.fillStyle = 'rgba(255,255,255,0.8)'; ctx.font = '20px -apple-system, sans-serif'; ctx.textBaseline = 'top'; ctx.fillText(tag, 50, 75); }
+
+  // GitHub
+  if (gh) { ctx.fillStyle = 'rgba(255,255,255,0.5)'; ctx.font = '16px monospace'; ctx.textBaseline = 'bottom'; ctx.fillText('github.com/' + gh, 50, h - 20); }
+
+  // Corner mark
+  ctx.fillStyle = 'rgba(255,255,255,0.08)'; ctx.font = '14px monospace'; ctx.textAlign = 'right'; ctx.textBaseline = 'top'; ctx.fillText('profile banner', w - 20, 20);
+
+  // Border
+  ctx.strokeStyle = 'rgba(255,255,255,0.1)'; ctx.lineWidth = 1; ctx.strokeRect(1, 1, w - 2, h - 2);
+}
+
+function downloadPNG() {
+  var can = document.getElementById('bannerCanvas');
+  var name = document.getElementById('name').value || 'banner';
+  var link = document.createElement('a');
+  link.download = name.replace(/[^a-z0-9_-]/gi, '_') + '-banner.png';
+  link.href = can.toDataURL('image/png');
+  link.click();
+}
+
+function copyHtml() {
+  var url = document.getElementById('bannerCanvas').toDataURL('image/png');
+  var md = '![banner](' + url + ')';
+  navigator.clipboard.writeText(md).then(function() { alert('Copied!'); }).catch(function() { prompt('Copy:', md); });
+}
+renderBanner();
+</script>
+</body>
+</html>
