@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Cyclauncher F-Droid store banner — v3 master (SVG)
+     Concept: kinetic cyclist-wheel built from layered neon arcs & spokes
+     Palette: cyan #19aeff + magenta #d76cff + lavender #f0b6d3 on dark
+     Slogan: effortless + fast + one-handed
+     Feature pillars: Tag Folders · Multi-modal Search · Favorites/Highlights
+                      App Categorization · Private Space
+     Hand-authored, fully scalable vector master (1024x500 base). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <!-- Background gradient -->
+    <radialGradient id="bg" cx="62%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0b0e16"/>
+      <stop offset="55%" stop-color="#070910"/>
+      <stop offset="100%" stop-color="#03040a"/>
+    </radialGradient>
+
+    <!-- Wheel ring gradients -->
+    <linearGradient id="ringCyan" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#19aeff"/>
+      <stop offset="100%" stop-color="#4fd0ff"/>
+    </linearGradient>
+    <linearGradient id="ringMagenta" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d76cff"/>
+      <stop offset="100%" stop-color="#f0b6d3"/>
+    </linearGradient>
+    <linearGradient id="arcTrail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#19aeff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#19aeff" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glowCyan" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glowMagenta" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="500" fill="url(#bg)"/>
+
+  <!-- Subtle grid / speed lines -->
+  <g stroke="#19aeff" stroke-opacity="0.06" stroke-width="1">
+    <line x1="0" y1="100" x2="1024" y2="100"/>
+    <line x1="0" y1="200" x2="1024" y2="200"/>
+    <line x1="0" y1="300" x2="1024" y2="300"/>
+    <line x1="0" y1="400" x2="1024" y2="400"/>
+  </g>
+
+  <!-- ================= KINETIC WHEEL (right) ================= -->
+  <g transform="translate(810,250)">
+    <!-- ambient glow -->
+    <circle r="210" fill="#19aeff" opacity="0.10" filter="url(#softGlow)"/>
+    <circle r="150" fill="#d76cff" opacity="0.08" filter="url(#softGlow)"/>
+
+    <!-- motion trails (behind, fading) -->
+    <g fill="none" stroke-linecap="round">
+      <path d="M -150 0 A 150 150 0 0 1 0 -150" stroke="#19aeff" stroke-opacity="0.10" stroke-width="10"/>
+      <path d="M 0 -150 A 150 150 0 0 1 150 0" stroke="#19aeff" stroke-opacity="0.18" stroke-width="10"/>
+      <path d="M 150 0 A 150 150 0 0 1 0 150" stroke="#19aeff" stroke-opacity="0.28" stroke-width="10"/>
+      <path d="M 0 150 A 150 150 0 0 1 -150 0" stroke="#19aeff" stroke-opacity="0.40" stroke-width="10"/>
+    </g>
+
+    <!-- spokes (radiating, motion) -->
+    <g stroke-linecap="round">
+      <line x1="0" y1="0" x2="0" y2="-185" stroke="#19aeff" stroke-opacity="0.55" stroke-width="3"/>
+      <line x1="0" y1="0" x2="130" y2="-130" stroke="#19aeff" stroke-opacity="0.40" stroke-width="3"/>
+      <line x1="0" y1="0" x2="185" y2="0" stroke="#19aeff" stroke-opacity="0.55" stroke-width="3"/>
+      <line x1="0" y1="0" x2="130" y2="130" stroke="#19aeff" stroke-opacity="0.40" stroke-width="3"/>
+      <line x1="0" y1="0" x2="0" y2="185" stroke="#19aeff" stroke-opacity="0.55" stroke-width="3"/>
+      <line x1="0" y1="0" x2="-130" y2="130" stroke="#19aeff" stroke-opacity="0.40" stroke-width="3"/>
+      <line x1="0" y1="0" x2="-185" y2="0" stroke="#19aeff" stroke-opacity="0.55" stroke-width="3"/>
+      <line x1="0" y1="0" x2="-130" y2="-130" stroke="#19aeff" stroke-opacity="0.40" stroke-width="3"/>
+    </g>
+
+    <!-- outer ring (cyan) -->
+    <circle r="185" fill="none" stroke="url(#ringCyan)" stroke-width="7" filter="url(#glowCyan)"/>
+    <!-- inner ring (magenta) -->
+    <circle r="150" fill="none" stroke="url(#ringMagenta)" stroke-width="5" filter="url(#glowMagenta)"/>
+    <!-- mid ring (lavender, dashed) -->
+    <circle r="167" fill="none" stroke="#f0b6d3" stroke-width="2" stroke-dasharray="10 14" stroke-opacity="0.7"/>
+
+    <!-- leading arc (bright, suggests rotation) -->
+    <path d="M 0 -185 A 185 185 0 0 1 185 0" fill="none" stroke="#4fd0ff" stroke-width="9" stroke-linecap="round" filter="url(#glowCyan)"/>
+    <path d="M 0 -150 A 150 150 0 0 1 150 0" fill="none" stroke="#f0b6d3" stroke-width="6" stroke-linecap="round" filter="url(#glowMagenta)"/>
+
+    <!-- hub -->
+    <circle r="26" fill="#0b0e16" stroke="#19aeff" stroke-width="4" filter="url(#glowCyan)"/>
+    <circle r="10" fill="#d76cff" filter="url(#glowMagenta)"/>
+
+    <!-- small satellite dots on the ring (like chain links) -->
+    <g fill="#4fd0ff">
+      <circle cx="0" cy="-185" r="5"/>
+      <circle cx="185" cy="0" r="5"/>
+      <circle cx="0" cy="185" r="5"/>
+      <circle cx="-185" cy="0" r="5"/>
+    </g>
+  </g>
+
+  <!-- ================= WORDMARK + SLOGAN (left) ================= -->
+  <g transform="translate(64,0)">
+    <!-- app name -->
+    <text x="0" y="150" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="1">Cyclauncher</text>
+
+    <!-- slogan -->
+    <text x="0" y="205" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="30" font-weight="600" fill="#19aeff" letter-spacing="2">
+      <tspan fill="#19aeff">effortless</tspan>
+      <tspan fill="#f0b6d3"> · </tspan>
+      <tspan fill="#d76cff">fast</tspan>
+      <tspan fill="#f0b6d3"> · </tspan>
+      <tspan fill="#4fd0ff">one-handed</tspan>
+    </text>
+
+    <!-- feature pillars -->
+    <g font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="600">
+      <!-- Tag Folders -->
+      <g transform="translate(0,250)">
+        <rect width="150" height="40" rx="20" fill="#0b0e16" stroke="#19aeff" stroke-opacity="0.5" stroke-width="1.5"/>
+        <text x="75" y="26" text-anchor="middle" fill="#4fd0ff">Tag Folders</text>
+      </g>
+      <!-- Multi-modal Search -->
+      <g transform="translate(162,250)">
+        <rect width="196" height="40" rx="20" fill="#0b0e16" stroke="#d76cff" stroke-opacity="0.5" stroke-width="1.5"/>
+        <text x="98" y="26" text-anchor="middle" fill="#f0b6d3">Multi-modal Search</text>
+      </g>
+      <!-- Favorites / Highlights -->
+      <g transform="translate(370,250)">
+        <rect width="196" height="40" rx="20" fill="#0b0e16" stroke="#19aeff" stroke-opacity="0.5" stroke-width="1.5"/>
+        <text x="98" y="26" text-anchor="middle" fill="#4fd0ff">Favorites / Highlights</text>
+      </g>
+      <!-- App Categorization -->
+      <g transform="translate(0,302)">
+        <rect width="196" height="40" rx="20" fill="#0b0e16" stroke="#d76cff" stroke-opacity="0.5" stroke-width="1.5"/>
+        <text x="98" y="26" text-anchor="middle" fill="#f0b6d3">App Categorization</text>
+      </g>
+      <!-- Private Space -->
+      <g transform="translate(208,302)">
+        <rect width="160" height="40" rx="20" fill="#0b0e16" stroke="#19aeff" stroke-opacity="0.5" stroke-width="1.5"/>
+        <text x="80" y="26" text-anchor="middle" fill="#4fd0ff">Private Space</text>
+      </g>
+    </g>
+  </g>
+</svg>
